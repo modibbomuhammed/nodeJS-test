@@ -26,27 +26,36 @@
 }
 
 .wrapper {
-  height: 50%;
-  width: 50%;
-  background-color: blueviolet;
+  height: 65%;
+  width: 65%;
 }
 
 .wrapper h1 {
   text-align: center;
   color: antiquewhite;
   white-space: nowrap;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
 }
 
 .image-container {
   margin: 0 auto;
   height: 400px;
+  width: 400px;
 }
 
 .image {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
 .center {
   margin: 25% auto;
+}
+
+.additional-info {
+  font-size: medium;
+  color: azure;
+  margin-bottom: 5px;
 }

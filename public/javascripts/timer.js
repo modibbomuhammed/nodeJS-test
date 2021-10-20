@@ -1,25 +1,24 @@
 function Timer(callback, delay) {
-  let callbackStartTime;
-  let remaining = 0;
-
+  this.callbackStartTime = 0;
+  this.remaining = 0;
   this.timerId = null;
   this.paused = false;
 
   this.pause = () => {
     this.clear();
-    remaining -= Date.now() - callbackStartTime;
+    this.remaining = Date.now() - this.callbackStartTime;
     this.paused = true;
   };
 
   this.resume = () => {
-    setTimeout(this.setTimeout.bind(this), remaining);
+    setTimeout(callback, this.remaining);
     this.paused = false;
   };
 
-  this.setTimer = () => {
+  this.startTimer = () => {
     this.clear();
     this.timerId = setInterval(() => {
-      callbackStartTime = Date.now();
+      this.callbackStartTime = Date.now();
       callback();
     }, delay);
   };
@@ -27,7 +26,4 @@ function Timer(callback, delay) {
   this.clear = () => {
     clearInterval(this.timerId);
   };
-
-  this.setTimeout();
-
 }
