@@ -12,7 +12,11 @@ const populateArtwork = () => {
     .then((obj) => {
       const picture = obj.primaryImage || notAvailableIcon;
       currentArtwork = obj;
-      imageContainer.innerHTML = `<img class='image' src="${picture}" />`;
+      imageContainer.innerHTML = `${
+        !currentArtwork.primaryImage
+          ? "<h5 class='no-pic'>Picture not Available</h5>"
+          : ""
+      }<img class='image' src="${picture}" />`;
     });
 };
 

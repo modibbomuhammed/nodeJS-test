@@ -59,3 +59,9 @@
   color: azure;
   margin-bottom: 5px;
 }
+
+.no-pic {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
